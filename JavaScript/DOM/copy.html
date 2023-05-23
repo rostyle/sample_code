@@ -1,0 +1,41 @@
+<table class="table">
+    <tr>
+        <th>コード</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>__company__</td>
+        <td>
+            <input type="hidden" value="__company__" />
+            <button style="margin-left:250px" onclick="copyToClipboard(this)" class="btn btn-primary">コピー</button></td>
+        </td>
+    </tr>
+    <tr>
+        <td>__firstname__</td>
+        <td>
+            <input type="hidden" value="__firstname__" />
+            <button style="margin-left:250px" onclick="copyToClipboard(this)" class="btn btn-primary">コピー</button></td>
+        </td>
+    </tr>
+    <tr>
+        <td>__lastname__</td>
+        <td>
+            <input type="hidden" value="__lastname__" />
+            <button style="margin-left:250px" onclick="copyToClipboard(this)" class="btn btn-primary">コピー</button></td>
+        </td>
+    </tr>
+</table>
+
+<script>
+    async function copyToClipboard(obj) {
+        
+        const element = obj.previousElementSibling;
+        
+        if (navigator.clipboard && !element.value == false) {
+        await navigator.clipboard.writeText(element.value);
+        alert("コピーしました。");
+        } else {
+        alert("コピーに失敗しました。");
+        }
+    }
+</script>
